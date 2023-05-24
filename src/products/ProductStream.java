@@ -24,18 +24,14 @@ public class ProductStream {
         // Métodos de Stream
         // Filtrando preços menores que 750.00 e retornando uma stream com os dados
         // filtrados
-        List<Double> priceList = productsList.stream()
-                .filter(product -> product.getPrice() < 750.00)
-                .map(product -> product.getPrice()).toList();
+        List<Double> priceList = (List<Double>) Collectors.toList();
 
         // Lista de preços
         priceList.forEach(price -> System.out.println(price));
         System.out.println();
 
         // Filtrando produtos com base no preço menor que 750.00
-        List<Product> pList = productsList.stream()
-                .filter(product -> product.getPrice() < 750.00)
-                .map(product -> product).toList();
+        List<Product> pList = (List<Product>) Collectors.toList();
 
         // Lista de produtos
         pList.forEach(
